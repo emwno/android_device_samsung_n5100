@@ -24,3 +24,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10
+
+PRODUCT_PACKAGES += \
+	libsecril-client-sap
+
+# Hardware-specific features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
+
+# Gps
+PRODUCT_COPY_FILES += \
+    device/samsung/n8000/configs/gps.conf:system/etc/gps.conf \
+    device/samsung/n8000/configs/gps.xml:system/etc/gps.xml
+
+# Audio
